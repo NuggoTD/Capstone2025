@@ -49,9 +49,19 @@ body {
         }
 
         #logo {
-            margin-right: 20px;
-            margin-top: -20px;
-            margin-bottom: -20px;
+            position: relative;
+            top: 70px;
+            right: 20px;
+        }
+
+        #fLogo {
+            position: absolute;
+            top: 220px;
+            right: 30px;
+        }
+
+        #fLogo:hover {
+            transform: scale(1.21);
         }
 
         header {
@@ -63,6 +73,10 @@ body {
 
         header h1 {
             margin: 0;
+        }
+
+        #company {
+            margin-right: 200px;
         }
 
         nav ul {
