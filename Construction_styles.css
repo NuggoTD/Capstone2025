@@ -64,6 +64,26 @@ body {
             transform: scale(1.21);
         }
 
+        #fLogo2 {
+            position: relative;
+            top: 330px;
+            right: 430px;
+        }
+
+        #fLogo2:hover {
+            transform: scale(1.21);
+        }
+
+        #fLogo3 {
+            position: relative;
+            top: 340px;
+            right: 680px;
+        }
+
+        #fLogo3:hover {
+            transform: scale(1.21);
+        }
+
         header {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             background: #367d4a;
@@ -147,6 +167,15 @@ body {
             font-size: 20px;
             color: black;
             margin-bottom: 70px;
+        }
+
+        .enhancing3 {
+            padding-left: 18px;
+        }
+
+        #enhancing3 {
+            font-size: 20px;
+            font-weight: bold;
         }
 
         .cText {
@@ -255,37 +284,82 @@ body {
             color: white;
         }
 
-        footer {
-            background: #367d4a;
+        .footerNav {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            width: 200px;
+        }
+
+        .footerA {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+        }
+
+        .footerB {
+            display: block;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 16px;
+            padding-left: 40px;
+            text-decoration: none;
+        }
+
+        #footerB {
             color: white;
-            text-align: center;
-            padding: 40px 0;
+            text-decoration: none;
         }
 
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        footer nav ul {
-            padding: 0;
-            display: flex;
-            gap: 20px;
-        }
-
-        footer nav ul li {
-            list-style: none;
-        }
-
-        footer nav ul li a {
-            color: white;
+        #footerA {
+            display: block;
+            font-size: 20px;
+            padding: 12px 16px;
             text-decoration: none;
             font-weight: bold;
         }
 
-        footer p {
-            margin-top: 10px;
-            font-size: 14px;
-            opacity: 0.8;
+        .footerA2 {
+            display: block;
+            font-size: 20px;
+            padding-top: 12px;
+            padding-bottom: 18px;
+            padding-right: 16px;
+            padding-left: 40px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #footerA2 {
+            display: block;
+            font-size: 20px;
+            padding-top: 12px;
+            padding-bottom: 18px;
+            padding-right: 16px;
+            padding-left: 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footerA2:hover {
+            color: lightgreen;
+        }
+
+        .footerA:hover {
+            color: lightgreen;
+        }
+
+        .footerB:hover {
+            color: lightgreen;
+        }
+
+        #footerB:hover {
+            color: lightgreen;
+        }
+
+        footer {
+            background: #367d4a;
+            color: white;
+            width: 100%;
+            height: 420px;
         }
