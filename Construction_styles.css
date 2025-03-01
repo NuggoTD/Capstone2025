@@ -8,6 +8,7 @@ body {
         background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23367d4a' fill-opacity='0.14'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
+        /*Container that holds the elements*/
         .container {
             width: 80%;
             margin: auto;
@@ -48,12 +49,14 @@ body {
             margin-top: 170px;
         }
 
+        /*The logo of the website*/
         #logo {
             position: relative;
             top: 70px;
             right: 20px;
         }
 
+        /*The Facebook icons that brings you to Andrew's Facebook*/
         #fLogo {
             position: absolute;
             top: 220px;
@@ -95,6 +98,7 @@ body {
             margin: 0;
         }
 
+        /* The header text right next to the logo*/
         #company {
             margin-right: 200px;
         }
@@ -158,17 +162,20 @@ body {
             font-size: 30px;
         }
 
+        /*Enhances a few of the paragraphs to make the text black and increase their font-size*/
         .enhancing {
             font-size: 20px;
             color: black;
         }
 
+        /*Enhances a specific paragraph to make more space*/
         .enhancing2 {
             font-size: 20px;
             color: black;
             margin-bottom: 70px;
         }
 
+        /*This enhances the paragraphs for the footer*/
         .enhancing3 {
             padding-left: 18px;
         }
@@ -178,10 +185,12 @@ body {
             font-weight: bold;
         }
 
+        /*This enhances the text for the Contact Us page*/
         .cText {
             padding-bottom: 20px;
         }
 
+        /*Increases the height for the intro paragraph*/
         #intro {
             height: 250px;
         }
@@ -246,6 +255,7 @@ body {
             margin: auto;
         }
 
+        /*The image under the header*/
         #wideimg {
             display: block;
             margin: auto;
@@ -253,6 +263,7 @@ body {
             height: 700px;
         }
 
+        /*The picture of the house on the homepage*/
         #house {
             width: 600px;
             height: 450px;
@@ -260,6 +271,7 @@ body {
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
         }
 
+        /*Shows a picture of a bedroom on the Contact section*/
         #bedroom {
             width: 100%;
             height: 800px;
@@ -284,6 +296,7 @@ body {
             color: white;
         }
 
+        /*Creates a vertical navigation for the footer*/
         .footerNav {
             list-style-type: none;
             margin: 0px;
@@ -291,12 +304,14 @@ body {
             width: 200px;
         }
 
+        /*For the Homepage and About links*/
         .footerA {
             display: block;
             padding: 12px 16px;
             text-decoration: none;
         }
 
+        /*For the links beneath Services*/
         .footerB {
             display: block;
             padding-top: 5px;
@@ -306,11 +321,13 @@ body {
             text-decoration: none;
         }
 
+        /*For Andrew's email address*/
         #footerB {
             color: white;
             text-decoration: none;
         }
 
+        /*For the Homepage and About links*/
         #footerA {
             display: block;
             font-size: 20px;
@@ -319,6 +336,7 @@ body {
             font-weight: bold;
         }
 
+        /*For the Services and Contact Us links*/
         .footerA2 {
             display: block;
             font-size: 20px;
