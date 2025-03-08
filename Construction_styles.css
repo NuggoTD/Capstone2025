@@ -52,8 +52,8 @@ body {
         /*The logo of the website*/
         #logo {
             position: relative;
-            top: 70px;
-            right: 20px;
+            top: 40px;
+            right: 10px;
         }
 
         /*The Facebook icons that brings you to Andrew's Facebook*/
@@ -70,7 +70,7 @@ body {
         #fLogo2 {
             position: relative;
             top: 330px;
-            right: 430px;
+            right: 670px;
         }
 
         #fLogo2:hover {
@@ -103,6 +103,10 @@ body {
             margin-right: 200px;
         }
 
+        nav {
+            padding-top: 15px;
+        }
+
         nav ul {
             list-style: none;
             padding: 0;
@@ -121,39 +125,6 @@ body {
 
         nav a:hover, nav a:active {
             color: lightgreen;
-        }
-
-        li a, .dropbtn {
-            display: inline-block;
-            color: white;
-            text-decoration: none;
-        }
-
-        li.dropdown {
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #367d4a;
-            min-width: 100px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 12px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        .dropdown-content a:hover {background-color: black;}
-
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
 
         h2 {
@@ -304,26 +275,14 @@ body {
             width: 200px;
         }
 
+        .footerNav li a {
+            color: white;
+        }
+
         /*For the Homepage and About links*/
         .footerA {
             display: block;
             padding: 12px 16px;
-            text-decoration: none;
-        }
-
-        /*For the links beneath Services*/
-        .footerB {
-            display: block;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-right: 16px;
-            padding-left: 40px;
-            text-decoration: none;
-        }
-
-        /*For Andrew's email address*/
-        #footerB {
-            color: white;
             text-decoration: none;
         }
 
@@ -359,15 +318,17 @@ body {
             font-weight: bold;
         }
 
+        /*Changes Andrews Email Address color to white*/
+        #footerB {
+            color: white;
+            text-decoration: none;
+        }
+
         .footerA2:hover {
             color: lightgreen;
         }
 
         .footerA:hover {
-            color: lightgreen;
-        }
-
-        .footerB:hover {
             color: lightgreen;
         }
 
