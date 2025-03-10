@@ -70,7 +70,7 @@ body {
         #fLogo2 {
             position: relative;
             top: 330px;
-            right: 670px;
+            right: 430px;
         }
 
         #fLogo2:hover {
@@ -125,6 +125,39 @@ body {
 
         nav a:hover, nav a:active {
             color: lightgreen;
+        }
+
+        li a, .dropbtn {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+        }
+    
+        li.dropdown {
+            display: inline-block;
+        }
+    
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #367d4a;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+    
+        .dropdown-content a {
+            color: white;
+            padding: 12px 12px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+    
+        .dropdown-content a:hover {background-color: black;}
+    
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         h2 {
@@ -318,6 +351,14 @@ body {
             font-weight: bold;
         }
 
+        .footerB {
+            display: block;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 16px;
+            padding-left: 40px;
+            text-decoration: none;
+        }
         /*Changes Andrews Email Address color to white*/
         #footerB {
             color: white;
@@ -336,9 +377,13 @@ body {
             color: lightgreen;
         }
 
+        .footerB:hover {
+            color: lightgreen;
+        }
+
         footer {
             background: #367d4a;
             color: white;
             width: 100%;
-            height: 420px;
+            height: 450px;
         }
