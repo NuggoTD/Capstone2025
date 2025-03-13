@@ -276,6 +276,14 @@ body {
             height: 700px;
         }
 
+        #wideimg2 {
+            display: block;
+            margin: auto;
+            object-fit: cover;
+            width: 100%;
+            height: 700px;
+        }
+
         /*The picture of the house on the homepage*/
         #house {
             width: 600px;
@@ -286,6 +294,13 @@ body {
 
         /*Image styles for the pictures for the services*/
         #bedroom, #iKitchen, #iBathroom, #iBasement, #iFlooring, #iStairs, #iAdditions {
+            width: 100%;
+            height: 800px;
+            object-fit: fill;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        #iDeck_patio, #iWindow_door, #iSiding_roof {
             width: 100%;
             height: 800px;
             object-fit: fill;
@@ -315,7 +330,16 @@ body {
             padding: 50px 0;
         }
 
+        #exterior {
+            height: 250px;
+            padding: 50px 0;
+        }
+
         #kitchen, #bathroom, #basement, #flooring, #stairs, #additions {
+            padding: 50px 0;
+        }
+
+        #deck_patio, #window_door, #siding_roof {
             padding: 50px 0;
         }
 
