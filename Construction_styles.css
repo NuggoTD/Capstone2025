@@ -276,12 +276,103 @@ body {
             height: 700px;
         }
 
+        /*image under header for about us page*/
+        #aboutimg {
+            display: block;
+            margin: auto;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: 50% 50%;
+        }
+
+        .content-row {
+            display: flex;
+            flex-direction: column; /* Default: stack content for single-column rows */
+            gap: 20px; /* Adds spacing between elements */
+        }
+        
+        .two-columns {
+            flex-direction: row; /* Two-column layout */
+            justify-content: space-between;
+        }
+        
+        .two-columns .left, .two-columns .right {
+            width: 48%; /* Adjust to create equal columns */
+        }
+
+        #profilepicture{
+            width: 100%;
+            object-fit: cover;
+            height: 500px;
+            object-position: 50% 30%;
+        }
         /*The picture of the house on the homepage*/
         #house {
             width: 600px;
             height: 450px;
             object-fit: cover;
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .quote-section {
+            background: #f4f4f4;
+            padding: 40px;
+            text-align: center;
+            font-style: italic;
+            font-size: 20px;
+            color: #333;
+        }
+        
+        .quote-section span {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #367d4a;
+        }
+        
+        .why-choose-us {
+            background: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .why-choose-us ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .why-choose-us li {
+            font-size: 18px;
+            padding: 10px 0;
+        }
+        
+        .cta-section {
+            background: #367d4a;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 10px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #367d4a;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: lightgreen;
+            color: #333;
         }
 
         /*Image styles for the pictures for the services*/
