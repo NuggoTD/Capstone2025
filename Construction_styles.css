@@ -104,6 +104,13 @@ body {
             margin-right: 200px;
         }
 
+        #nPortfolio {
+            background: black;
+            text-align: center;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
         nav {
             padding-top: 15px;
         }
@@ -172,6 +179,15 @@ body {
             color: black;
             font-size: 30px;
             text-align: center;
+        }
+
+        #pHeader {
+            font-family: cursive;
+            color: black;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 70px;
+            margin-bottom: 60px;
         }
 
         /*Enhances a few of the paragraphs to make the text black and increase their font-size*/
@@ -258,6 +274,17 @@ body {
         .portfolio-grid img:hover {
             transform: scale(1.05);
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #pKitchen, #pBathroom, #pBasement, #pFlooring, #pStaircase_railing, #pAddition, #pDeck_patio, #pWindow_door, #pSiding_roof {
+            display: none;
+        }
+
+        #pKitchen:target, #pBathroom:target, #pBasement:target, #pFlooring:target, #pStaircase_railing:target, #pAddition:target, #pDeck_patio:target, #pWindow_door:target, #pSiding_roof:target {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .column img {
