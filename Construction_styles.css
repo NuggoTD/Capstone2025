@@ -187,7 +187,7 @@ body {
             font-size: 30px;
             text-align: center;
             margin-top: 70px;
-            margin-bottom: 60px;
+            margin-bottom: 110px;
         }
 
         /*Enhances a few of the paragraphs to make the text black and increase their font-size*/
@@ -285,6 +285,14 @@ body {
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+        }
+
+        #pKitchen:target img, #pBathroom:target img, #pBasement:target img, #pFlooring:target img, #pStaircase_railing:target img, #pAddition:target img, #pDeck_patio:target img, #pWindow_door:target img, #pSiding_roof:target img {
+            width: 300px;
+            height: 300px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .column img {
