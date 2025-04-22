@@ -1,7 +1,7 @@
 ---
 title: Kitchen Remodeling
 heading: Our Kitchen Remodels Will Make you Stoked
-image: /Images/Kitchen6.jpeg
+image: /Images/Stairs2.jpeg
 ---
 At Andrew Heidelberger Construction, our kitchen remodels aren’t about flashy trends — they’re about creating spaces where people feel at home.  
 
