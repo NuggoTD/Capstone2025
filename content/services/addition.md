@@ -1,7 +1,7 @@
 ---
 title: Home Additions
 heading: Expand Your Space, Stay in the Home You Love
-image: /Images/Bedroom.jpg
+image: /Images/Addition.jpeg
 ---
 
 Need more space? We understand that growing families and changing needs call for thoughtful solutions.
