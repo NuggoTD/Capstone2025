@@ -1,5 +1,5 @@
 ---
-hero: /Images/Kitchen4.jpg
+hero: /Images/Kitchen12.png
 intro_heading: Welcome to Andrew Heidelberger Construction!
 intro_paragraph: At Andrew Heidelberger Construction, we believe your home
   should reflect your lifestyle and your story. With years of experience in
