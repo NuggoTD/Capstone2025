@@ -1,7 +1,7 @@
 ---
 title: Decks + Patios
 heading: Enjoy the Outdoors in Comfort and Style
-image: /Images/Siding3.jpg
+image: /Images/Deck3.jpg
 ---
 
 Minnesota summers are short — let’s make the most of them!
