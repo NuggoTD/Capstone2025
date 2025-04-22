@@ -1,0 +1,164 @@
+[
+  {
+    "title": "Kitchen Projects",
+    "category": "Kitchens",
+    "images": [
+      {
+        "image": "Images/Kitchen2.jpg"
+      },
+      {
+        "image": "Images/Kitchen9.jpg"
+      },
+      {
+        "image": "Images/Kitchen10.jpg"
+      },
+      {
+        "image": "Images/Kitchen11.jpg"
+      },
+      {
+        "image": "Images/Kitchen3.jpg"
+      },
+      {
+        "image": "Images/Kitchen8.jpg"
+      },
+      {
+        "image": "Images/Kitchen4.jpg"
+      },
+      {
+        "image": "Images/Kitchen6.jpeg"
+      },
+      {
+        "image": "Images/Kitchen7.jpeg"
+      }
+    ]
+  },
+  {
+    "title": "Bathroom Projects",
+    "category": "Bathrooms",
+    "images": [
+      {
+        "image": "Images/Bathroom.png"
+      }
+    ]
+  },
+  {
+    "title": "Basement Projects",
+    "category": "Basements",
+    "images": [
+      {
+        "image": "Images/Basement2.jpg"
+      },
+      {
+        "image": "Images/Basement.jpg"
+      },
+      {
+        "image": "Images/Basement3.jpeg"
+      }
+    ]
+  },
+  {
+    "title": "Flooring Projects",
+    "category": "Flooring",
+    "images": [
+      {
+        "image": "Images/Flooring2.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Staircase + Railing Projects",
+    "category": "Staircase + Railing",
+    "images": [
+      {
+        "image": "Images/Stairs.jpg"
+      },
+      {
+        "image": "Images/Stairs2.jpeg"
+      },
+      {
+        "image": "Images/Stairs3.jpeg"
+      }
+    ]
+  },
+  {
+    "title": "Additions Projects",
+    "category": "Additions",
+    "images": [
+      {
+        "image": "Images/Addition.jpeg"
+      },
+      {
+        "image": "Images/Addition2.jpeg"
+      },
+      {
+        "image": "Images/Addition3.jpeg"
+      },
+      {
+        "image": "Images/Addition4.jpeg"
+      },
+      {
+        "image": "Images/Bedroom.jpg"
+      },
+      {
+        "image": "Images/Bedroom2.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Decks + Patios Projects",
+    "category": "Decks + Patios",
+    "images": [
+      {
+        "image": "Images/Deck.jpg"
+      },
+      {
+        "image": "Images/Deck2.jpg"
+      },
+      {
+        "image": "Images/Deck7.jpg"
+      },
+      {
+        "image": "Images/Deck4.jpg"
+      },
+      {
+        "image": "Images/Deck5.jpg"
+      },
+      {
+        "image": "Images/Deck6.jpg"
+      },
+      {
+        "image": "Images/Patio.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Windows + Doors Projects",
+    "category": "Windows + Doors",
+    "images": [
+      {
+        "image": "Images/Window.jpg"
+      },
+      {
+        "image": "Images/Door.jpg"
+      },
+      {
+        "image": "Images/Door2.jpeg"
+      }
+    ]
+  },
+  {
+    "title": "Siding + Roof Projects",
+    "category": "Siding + Roof",
+    "images": [
+      {
+        "image": "Images/Garage.jpg"
+      },
+      {
+        "image": "Images/Siding.jpg"
+      },
+      {
+        "image": "Images/Siding2.jpg"
+      }
+    ]
+  }
+]

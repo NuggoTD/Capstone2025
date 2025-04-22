@@ -1,0 +1,121 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "Images"
+public_folder: "/Images"
+
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - label: "Index Page"
+        name: "index"
+        file: "content/index.md"
+        fields:
+          - { label: "Hero Image", name: "hero", widget: "image" }
+          - { label: "Intro Heading", name: "intro_heading", widget: "string" }
+          - { label: "Intro Paragraph", name: "intro_paragraph", widget: "text" }
+          - { label: "Column Heading", name: "column_heading", widget: "string" }
+          - { label: "Column Paragraph", name: "column_paragraph", widget: "text" }
+          - { label: "Column Image", name: "column_image", widget: "image" }
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            field: { label: "Service Image", name: "image", widget: "image" }
+          - label: "Portfolio"
+            name: "portfolio"
+            widget: "list"
+            field: { label: "Portfolio Image", name: "image", widget: "image" }
+          - { label: "Contact Heading", name: "contact_heading", widget: "string" }
+          - { label: "Contact Paragraph", name: "contact_paragraph", widget: "text" }
+          - { label: "Bedroom Image", name: "bedroom_image", widget: "image" }
+  - name: "interior"
+    label: "Interior Page"
+    files:
+      - label: "Interior Content"
+        name: "interior"
+        file: "content/services/interior.md"
+        format: "frontmatter"
+        fields:
+          - { name: "image", label: "Hero Image", widget: "image" }
+          - { name: "title", label: "Heading", widget: "string" }
+          - { name: "body", label: "Paragraph", widget: "markdown" }
+          - label: "Service Images"
+            name: "service_images"
+            widget: "list"
+            max: 6
+            field: { label: "Image", name: "image", widget: "image"}
+  - name: "exterior"
+    label: "Exterior Page"
+    files:
+      - label: "Exterior Content"
+        name: "exterior"
+        file: "content/services/exterior.md"
+        format: "frontmatter"
+        fields:
+          - { name: "image", label: "Hero Image", widget: "image" }
+          - { name: "title", label: "Heading", widget: "string" }
+          - { name: "body", label: "Paragraph", widget: "markdown" }
+          - label: "Service Images"
+            name: "service_images"
+            widget: "list"
+            max: 3
+            field: { label: "Image", name: "image", widget: "image"}
+  - name: "services"
+    label: "Service Pages"
+    folder: "content/services"
+    format: "frontmatter"
+    extension: "md"
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "heading", label: "Page Heading", widget: "string" }
+      - { name: "image", label: "Main Image", widget: "image" }
+      - { name: "body", label: "Description", widget: "markdown" }
+
+  - name: "test"
+    label: "Test Page"
+    format: "frontmatter"
+    files:
+      - file: "content/test.md"
+        name: "test"
+        label: "CMS Test Page"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            field:
+              label: "Image"
+              name: ""
+              widget: "image"
+          - { label: "Body", name: "body", widget: "markdown" }
+  - name: "portfolio"
+    label: "Portfolio"
+    label_singular: "Project"
+    folder: "content/portfolio"
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    summary: "{{title}} — {{category}}"
+    fields:
+      - { name: "title", label: "Project Title", widget: "string" }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        summary: "{{fields.image}}"
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+            media_folder: "/Images"
+            public_folder: "/Images"
+
+
+
+
+
+
+            
+
