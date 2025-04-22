@@ -14,7 +14,7 @@ column_paragraph: Our team approaches every project with dedication, attention
   just honest work, quality materials, and results that stand the test of time.
 column_image: /Images/House.jpg
 services:
-  - /Images/Deck4.jpg
+  - /Images/Kitchen4.jpg
   - /Images/Deck2.jpg
 portfolio:
   - /Images/Kitchen2.jpg
