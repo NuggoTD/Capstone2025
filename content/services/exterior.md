@@ -1,8 +1,8 @@
 ---
-title: Revamp The Exterior Of Your Home
 image: /Images/House2.png
+title: Revamp The Exterior Of Your Home
 service_images:
-  - /Images/Bathroom.png
+  - /Images/Deck4.jpg
   - /Images/Door.jpg
   - /Images/Siding2.jpg
 ---
