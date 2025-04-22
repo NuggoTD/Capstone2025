@@ -27,9 +27,9 @@
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="exterior.html" class="dropbtn" aria-current="page">Exteriors</a>
+                        <a href="exterior.html" class="dropbtn">Exteriors</a>
                         <div class="dropdown-content">
-                            <a href="deck_patio.html" class="active" aria-current="page">Decks + Patios</a>
+                            <a href="deck_patio.html">Decks + Patios</a>
                             <a href="window_door.html">Windows + Doors</a>
                             <a href="siding_roof.html">Siding + Roof</a>
                         </div>
@@ -44,15 +44,13 @@
     <section id="deck_patio">
         <div class="row">
             <div class="column3">
-                <h2 id="sHeader">Enjoy The Breeze On Your New Deck Or Patio</h2>
+                <h2 id="dynamic-heading">Loading...</h2>
                 <p class="enhancing2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
                 </p>
-                <a href="portfolio.html" id="cButton">Portfolio</a>
+                <a href="portfolio.html#pDeck_patio" id="cButton">Portfolio</a>
             </div>
             <div class="column2">
-                <img id="iDeck_patio" src="Images/Deck3.jpg" alt="Image of a deck" />
+                <img id="iDeck_patio" src="" alt="Image of a deck" />
             </div>
         </div>
     </section>
@@ -104,5 +102,49 @@
             <a href="https://www.facebook.com/AndrewHeidelbergerConstruction" target="_blank"><img src="Images/fLogo.png" id="fLogo2" alt="Facebook logo" /></a>
         </div>
     </footer>
+
+    <!-- CMS content injection script -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch("content/services/basement.md")
+      .then(res => res.text())
+      .then(md => {
+        const frontmatterMatch = md.match(/^---\n([\s\S]+?)\n---/);
+        let metadata = {};
+        let content = md;
+  
+        if (frontmatterMatch) {
+          const fm = frontmatterMatch[1];
+          content = md.slice(frontmatterMatch[0].length);
+  
+          fm.split("\n").forEach(line => {
+            const [key, ...rest] = line.split(":");
+            const value = rest.join(":").trim().replace(/^"|"$/g, '');
+            metadata[key.trim()] = value;
+          });
+        }
+  
+        // 🔻 Update the <img> source from metadata
+        const img = document.getElementById("iDeck_patio");
+        if (img && metadata.image) {
+          img.src = metadata.image;
+        }
+  
+        // 🔻 Update the heading text
+        const heading = document.querySelector("#deck_patio h2");
+        if (heading && metadata.heading) {
+          heading.textContent = metadata.heading;
+        }
+  
+        // 🔻 Update the paragraph content with markdown
+        const p = document.querySelector("#deck_patio .enhancing2");
+        if (p) {
+          p.innerHTML = marked.parse(content);
+        }
+      })
+      .catch(err => {
+        console.error("Failed to load Deck and Patio content:", err);
+      });
+  </script>
 </body>
 </html>

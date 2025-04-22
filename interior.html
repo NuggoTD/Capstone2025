@@ -16,7 +16,7 @@
                     <li><a href="index.html">Homepage</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="dropdown">
-                        <a href="interior.html" class="dropbtn" aria-current="page">Interiors</a>
+                        <a href="interior.html" class="dropbtn">Interiors</a>
                         <div class="dropdown-content">
                             <a href="kitchen.html">Kitchens</a>
                             <a href="bathroom.html">Bathrooms</a>
@@ -47,12 +47,8 @@
 
     <section id="interior">
         <div class="container">
-            <h2>Explore Indoor Remodeling And Installations For Your Home</h2>
-            <p class="enhancing">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
-            </p>
+            <h2></h2>
+            <p class="enhancing"></p>
         </div>
     </section>
 
@@ -61,15 +57,15 @@
             <h2>Interior Remodeling And Installations</h2>
             <div class="service-grid">
                 <div class="service-item">
-                    <a href="kitchen.html"><img src="Images/Kitchen4.jpg" alt="Picture of a kitchen" /></a>
+                    <a href="kitchen.html"><img alt="Picture of a kitchen" /></a>
                     <h3>Kitchens</h3>
                 </div>
                 <div class="service-item">
-                    <a href="bathroom.html"><img src="Images/Bathroom.png" alt="Picture of a bathroom" /></a>
+                    <a href="bathroom.html"><img alt="Picture of a bathroom" /></a>
                     <h3>Bathrooms</h3>
                 </div>
                 <div class="service-item">
-                    <a href="basement.html"><img src="Images/Basement.jpg" alt="Picture of a basement" /></a>
+                    <a href="basement.html"><img alt="Picture of a basement" /></a>
                     <h3>Basements</h3>
                 </div>
             </div>
@@ -77,15 +73,15 @@
         <div class="container">
             <div class="service-grid">
                 <div class="service-item">
-                    <a href="flooring.html"><img src="Images/Flooring2.jpg" alt="Picture of a floor" /></a>
+                    <a href="flooring.html"><img alt="Picture of a floor" /></a>
                     <h3>Flooring</h3>
                 </div>
                 <div class="service-item">
-                    <a href="staircase_railing.html"><img src="Images/Stairs.jpg" alt="Picture of a staircase" /></a>
+                    <a href="staircase_railing.html"><img alt="Picture of a staircase" /></a>
                     <h3>Staircase + Railing</h3>
                 </div>
                 <div class="service-item">
-                    <a href="addition.html"><img src="Images/Bedroom2.jpg" alt="Picture of a Bedroom" /></a>
+                    <a href="addition.html"><img alt="Picture of a Bedroom" /></a>
                     <h3>Additions</h3>
                 </div>
             </div>
@@ -139,5 +135,81 @@
             <a href="https://www.facebook.com/AndrewHeidelbergerConstruction" target="_blank"><img src="Images/fLogo.png" id="fLogo2" alt="Facebook logo" /></a>
         </div>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      fetch("content/services/interior.md")
+        .then(res => res.text())
+        .then(md => {
+          const frontmatterMatch = md.match(/^---\n([\s\S]+?)\n---/);
+          let metadata = {};
+          let content = md;
+    
+          if (frontmatterMatch) {
+            const fm = frontmatterMatch[1];
+            content = md.slice(frontmatterMatch[0].length);
+    
+            const lines = fm.split("\n");
+            let currentKey = "";
+            lines.forEach(line => {
+              if (line.trim().startsWith("-")) {
+                if (!metadata[currentKey]) metadata[currentKey] = [];
+                const value = line
+                  .replace(/^[-\s]+/, "")
+                  .replace(/^"|"$/g, "")
+                  .trim();
+                metadata[currentKey].push(value);
+              } else if (line.includes(":")) {
+                const [key, ...rest] = line.split(":");
+                currentKey = key.trim();
+                const value = rest.join(":").trim().replace(/^"|"$/g, "");
+                metadata[currentKey] = value;
+              }
+            });
+          }
+    
+          console.log("Parsed metadata:", metadata);
+    
+          // Banner image
+          const banner = document.getElementById("wideimg");
+          if (banner && metadata.image) {
+            banner.src = metadata.image.trim();
+          }
+    
+          // Heading
+          const heading = document.querySelector("#interior h2");
+          if (heading && metadata.title) {
+            heading.textContent = metadata.title;
+          }
+    
+          // Paragraph
+          const paragraph = document.querySelector("#interior .enhancing");
+          if (paragraph) {
+            paragraph.innerHTML = marked.parse(content);
+          }
+    
+          // Service images
+          const serviceImgs = document.querySelectorAll(".service-grid img");
+          if (Array.isArray(metadata.service_images)) {
+            metadata.service_images.forEach((src, i) => {
+              if (serviceImgs[i]) {
+                const cleanedSrc = String(src)
+                  .replace(/^[-\s]+/, "")
+                  .replace(/^"|"$/g, "")
+                  .trim();
+                console.log(`Injecting image ${i}: ${cleanedSrc}`);
+                serviceImgs[i].src = cleanedSrc;
+              }
+            });
+          } else {
+            console.warn("No valid service_images array found.");
+          }
+        })
+        .catch(err => {
+          console.error("Failed to load interior content:", err);
+        });
+    </script>
+    
+
 </body>
 </html>

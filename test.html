@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMS Test Page</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cms-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 2rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cms-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .cms-content p {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="page-title">Loading...</h1>
+  <div id="content" class="cms-content">Loading content from CMS...</div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("content/test.md")
+        .then((res) => res.text())
+        .then((md) => {
+          const frontmatterMatch = md.match(/^---\n([\s\S]+?)\n---/);
+          let metadata = {};
+          let content = md;
+    
+          if (frontmatterMatch) {
+            const fm = frontmatterMatch[1];
+            content = md.slice(frontmatterMatch[0].length);
+    
+            const lines = fm.split("\n");
+            let currentKey = "";
+            lines.forEach(line => {
+              // Detect list item (like - /Images/image.jpg)
+              if (line.trim().startsWith("-")) {
+                if (!metadata[currentKey]) metadata[currentKey] = [];
+                const cleaned = line.trim().replace(/^-\s*/, "").replace(/^"|"$/g, "");
+                metadata[currentKey].push(cleaned);
+              }
+              // Detect regular key-value (like title: CMS Test Page)
+              else if (line.includes(":")) {
+                const [key, ...rest] = line.split(":");
+                currentKey = key.trim();
+                const value = rest.join(":").trim();
+                if (value !== "") {
+                  metadata[currentKey] = value;
+                }
+              }
+            });
+          }
+    
+          console.log("Parsed metadata:", metadata);
+    
+          const contentEl = document.getElementById("content");
+          document.getElementById("page-title").textContent = metadata.title || "CMS Test Page";
+    
+          if (metadata.images && Array.isArray(metadata.images)) {
+            console.log("Rendering images:", metadata.images);
+            metadata.images.forEach((src) => {
+              const img = document.createElement("img");
+              console.log("Injecting image:", src);
+              img.src = src;
+              img.alt = metadata.title || '';
+              img.className = "cms-image";
+              contentEl.appendChild(img);
+            });
+          } else {
+            console.warn("No images found or 'images' is not an array.");
+          }
+    
+          contentEl.innerHTML += marked.parse(content);
+        })
+        .catch((err) => {
+          document.getElementById("content").textContent = "Failed to load content.";
+          console.error(err);
+        });
+    });
+    </script>
+    
+</body>
+</html>
