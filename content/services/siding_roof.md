@@ -1,7 +1,7 @@
 ---
 title: Siding + Roof
 heading: Protect and Beautify Your Home Exterior
-image: /Images/Siding2.jpg
+image: /Images/Siding3.jpg
 ---
 
 Your home’s first impression starts with the outside.
