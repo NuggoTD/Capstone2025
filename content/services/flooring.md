@@ -1,7 +1,7 @@
 ---
 title: Flooring Installation
 heading: Upgrade the Foundation of Your Home
-image: /Images/Flooring2.jpg
+image: /Images/Flooring.jpeg
 ---
 
 The right flooring can change the feel of your whole home. From classic hardwood to durable luxury vinyl, we’ll help you choose materials that work for your lifestyle — and install them with care.
