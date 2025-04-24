@@ -1,0 +1,33 @@
+{
+  "title": "Kitchen Projects",
+  "category": "Kitchens",
+  "images": [
+    {
+      "image": "Images/Kitchen2.jpg"
+    },
+    {
+      "image": "Images/Kitchen9.jpg"
+    },
+    {
+      "image": "Images/Kitchen10.jpg"
+    },
+    {
+      "image": "Images/Kitchen11.jpg"
+    },
+    {
+      "image": "Images/Kitchen3.jpg"
+    },
+    {
+      "image": "Images/Kitchen8.jpg"
+    },
+    {
+      "image": "Images/Kitchen4.jpg"
+    },
+    {
+      "image": "Images/Kitchen6.jpeg"
+    },
+    {
+      "image": "Images/Kitchen7.jpeg"
+    }
+  ]
+}

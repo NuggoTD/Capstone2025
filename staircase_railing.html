@@ -16,13 +16,13 @@
                     <li><a href="index.html">Homepage</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li class="dropdown">
-                        <a href="interior.html" class="dropbtn" aria-current="page">Interiors</a>
+                        <a href="interior.html" class="dropbtn">Interiors</a>
                         <div class="dropdown-content">
                             <a href="kitchen.html">Kitchens</a>
                             <a href="bathroom.html">Bathrooms</a>
                             <a href="basement.html">Basements</a>
                             <a href="flooring.html">Flooring</a>
-                            <a href="staircase_railing.html" class="active" aria-current="page">Staircase + Railing</a>
+                            <a href="staircase_railing.html">Staircase + Railing</a>
                             <a href="addition.html">Additions</a>
                         </div>
                     </li>
@@ -44,15 +44,13 @@
     <section id="stairs">
         <div class="row">
             <div class="column3">
-                <h2 id="sHeader">We Provide The Safest Staircase Installations</h2>
+                <h2 id="dynamic-heading"></h2>
                 <p class="enhancing2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique.
                 </p>
-                <a href="portfolio.html" id="cButton">Portfolio</a>
+                <a href="portfolio.html#pStaircase_railing" id="cButton">Portfolio</a>
             </div>
             <div class="column2">
-                <img id="iStairs" src="Images/Stairs2.jpeg" alt="Image of stairs" />
+                <img id="iStairs" src="" alt="Image of stairs" />
             </div>
         </div>
     </section>
@@ -104,5 +102,49 @@
             <a href="https://www.facebook.com/AndrewHeidelbergerConstruction" target="_blank"><img src="Images/fLogo.png" id="fLogo2" alt="Facebook logo" /></a>
         </div>
     </footer>
+
+    <!-- CMS content injection script -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    fetch("content/services/staircase_railing.md")
+      .then(res => res.text())
+      .then(md => {
+        const frontmatterMatch = md.match(/^---\n([\s\S]+?)\n---/);
+        let metadata = {};
+        let content = md;
+  
+        if (frontmatterMatch) {
+          const fm = frontmatterMatch[1];
+          content = md.slice(frontmatterMatch[0].length);
+  
+          fm.split("\n").forEach(line => {
+            const [key, ...rest] = line.split(":");
+            const value = rest.join(":").trim().replace(/^"|"$/g, '');
+            metadata[key.trim()] = value;
+          });
+        }
+  
+        // 🔻 Update the <img> source from metadata
+        const img = document.getElementById("iStairs");
+        if (img && metadata.image) {
+          img.src = metadata.image;
+        }
+  
+        // 🔻 Update the heading text
+        const heading = document.querySelector("#stairs h2");
+        if (heading && metadata.heading) {
+          heading.textContent = metadata.heading;
+        }
+  
+        // 🔻 Update the paragraph content with markdown
+        const p = document.querySelector("#stairs .enhancing2");
+        if (p) {
+          p.innerHTML = marked.parse(content);
+        }
+      })
+      .catch(err => {
+        console.error("Failed to load Staircase and Railing content:", err);
+      });
+  </script>
 </body>
 </html>
