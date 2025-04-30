@@ -168,6 +168,14 @@ body {
             display: block;
         }
 
+        a[aria-current="page"] {
+            color: lightgreen;
+        }
+
+        .active[aria-current="page"] {
+            color: lightgreen;
+        }
+
         h2 {
             font-family: cursive;
             color: black;
